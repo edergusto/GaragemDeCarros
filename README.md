@@ -26,7 +26,7 @@ Foco nos fundamentos de classes, encapsulamento e membros estáticos utilizando 
 - [ ] **Exercício 12:** Referência vs Valor com objetos (Conceitos de Stack e Heap).
 - [ ] **Exercício 13:** Passagem de objetos como parâmetro de método.
 - [ ] **Exercício 14:** Sobrecarga completa de construtores na classe `Cliente`.
-- [ ] **Exercício 15:** Mini-sistema integrado com Scanner e Menu.
+- [x] **Exercício 15:** Mini-sistema integrado com Scanner e Menu.
 
 ---
 
