@@ -1,5 +1,6 @@
 package main.java.br.com.exercicios;
 import main.java.br.com.exercicios.models.Carro;
+import main.java.br.com.exercicios.services.CarroService;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +9,10 @@ public class Main {
         carro.setModelo("Civic");
         carro.setAno(2014);
 
-        System.out.println(String.format("Marca: %s, Modelo: %s, Ano: %d", carro.getMarca(), carro.getModelo(), carro.getAno()));
+        CarroService service = new CarroService();
+
+        // exercicio 2 - execucao acao
+        service.exibirCarro(carro);
+        service.anoCarro(carro);
     }
 }
