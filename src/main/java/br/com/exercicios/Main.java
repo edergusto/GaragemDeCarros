@@ -1,19 +1,38 @@
 package main.java.br.com.exercicios;
-import main.java.br.com.exercicios.models.Carro;
-import main.java.br.com.exercicios.services.CarroService;
 
-import java.awt.*;
-import java.util.ArrayList;
+import main.java.br.com.exercicios.services.CarroService;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         CarroService service = new CarroService();
 
-        service.cadastrarCarro(Carro);
+        boolean sair = false;
 
-        // exercicio 2 - execucao acao
-        service.exibirCarro(carro);
-        service.anoCarro(carro);
+        do {
+            System.out.println("MENU PRINCIPAL");
+            System.out.println("1.Cadastrar 2.Exibir 3.Serviços 0.Sair");
+            System.out.println("Escolha uma opção:");
+            int opcao = sc.nextInt();
+                switch (opcao) {
+                    case 1:
+                        service.cadastrarCarro();
+                        break;
+                    case 2:
+                        service.exibirCarro();
+                        break;
+                    case 3:
+                        //service.anoCarro();
+                        break;
+                    case 0:
+                        sair = true;
+                        break;
+                    default:
+                        System.out.println("Opção inválida!");
+                }
+        } while (!sair);
+        System.out.println("Sistema finalizado!");
     }
 }
