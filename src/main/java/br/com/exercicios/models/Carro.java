@@ -1,10 +1,10 @@
 package main.java.br.com.exercicios.models;
 
 public class Carro {
-    int garagem;
-    String marca;
-    String modelo;
-    int ano;
+    private int garagem;
+    private String marca;
+    private String modelo;
+    private int ano;
 
     public String getMarca() {
         return marca;
