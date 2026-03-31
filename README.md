@@ -81,7 +81,7 @@ src/
 
 ---
 
-### 🍔 Lanchonete do Seu Jorge — Exercício 16 (`lanchonete/`)
+### 🍔 Lanchonete do Seu Jorge — (`lanchonete/`)
 
 - [ ] Criar classe `Lanche` com atributos `nome` e `preco` (private)
     - [ ] Validar que o preço não pode ser negativo no setter
@@ -95,7 +95,7 @@ src/
 
 ---
 
-### 🅿️ Estacionamento do Carlão — Exercício 17 (`estacionamento/`)
+### 🅿️ Estacionamento do Carlão — (`estacionamento/`)
 
 - [ ] Criar classe `Vaga` (ou similar) com `placa` e `modelo` do carro
 - [ ] Definir `static final int TOTAL_VAGAS = 20`
@@ -109,7 +109,7 @@ src/
 
 ---
 
-### 💪 Academia da Fernanda — Exercício 18 (`academia/`)
+### 💪 Academia da Fernanda — (`academia/`)
 
 - [ ] Criar classe `Aluno` com atributos `nome`, `idade` e `plano` (private)
     - [ ] Validar idade mínima de 14 anos no setter
@@ -124,7 +124,7 @@ src/
 
 ---
 
-### 🎬 Locadora do Marcos — Exercício 19 (`locadora/`)
+### 🎬 Locadora do Marcos — (`locadora/`)
 
 - [ ] Criar classe `Filme` com atributos `titulo`, `genero` e `anoLancamento` (private)
     - [ ] Validar ano entre `ANO_PRIMEIRO_FILME` (1895) e 2026 no setter
@@ -139,7 +139,7 @@ src/
 
 ---
 
-### 🛵 Delivery da Camila — Exercício 20 (`delivery/`)
+### 🛵 Delivery da Camila — (`delivery/`)
 
 - [ ] Criar classe `Marmita` com atributos `descricao` e `tamanho` (P, M ou G)
     - [ ] Definir constantes `static final double PRECO_P = 18.0`, `PRECO_M = 25.0`, `PRECO_G = 32.0`
