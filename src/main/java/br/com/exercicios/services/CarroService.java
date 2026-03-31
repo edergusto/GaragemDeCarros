@@ -15,6 +15,8 @@ public class CarroService {
     static int totalVagas = 5;
     static int vagasAtual = 0;
     public static int idVagaGaragem = 1;
+    public static final int MINIMO_ANO = 1886;
+    public static final int MAXIMO_ANO = LocalDate.now().getYear();
 
     public void subMenuCadastrarCarro(){
         Scanner sc = new Scanner(System.in);

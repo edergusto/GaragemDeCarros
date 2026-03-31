@@ -12,7 +12,7 @@ public class Carro {
     private int ano;
 
     public Carro(int idVaga, String marca, String modelo, int ano) {
-        if ( ano < 1886 ) {
+        if ( ano < CarroService.MINIMO_ANO || ano > CarroService.MAXIMO_ANO ) {
             throw new IllegalArgumentException("Ano inválido!");
         }
         this.idVaga = idVaga;
