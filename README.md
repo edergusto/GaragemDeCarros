@@ -17,7 +17,7 @@ Foco nos fundamentos de classes, encapsulamento e membros estáticos utilizando 
 - [x] **Exercício 3:** Uso de `ArrayList<Carro>` e loop `for-each`.
 - [x] **Exercício 4:** Encapsulamento (`private`, getters/setters e validação de ano).
 - [x] **Exercício 5:** Construtor parametrizado.
-- [ ] **Exercício 6:** Sobrecarga de construtor (padrão vs "Desconhecido").
+- [x] **Exercício 6:** Sobrecarga de construtor (padrão vs "Desconhecido").
 - [ ] **Exercício 7:** Atributo `static` para contagem total de carros.
 - [ ] **Exercício 8:** Método `static` e restrições de acesso a instâncias.
 - [ ] **Exercício 9:** Uso de `final` para constantes (Ano do primeiro carro: 1886).
