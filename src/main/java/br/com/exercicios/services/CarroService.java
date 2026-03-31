@@ -12,8 +12,9 @@ public class CarroService {
     // exercicio 3 - cria lista de carro
     List<Carro> carros = new ArrayList<Carro>();
 
-    static int totalVaga = 5;
+    static int totalVagas = 5;
     static int vagasAtual = 0;
+    public static int idVagaGaragem = 1;
 
     public void subMenuCadastrarCarro(){
         Scanner sc = new Scanner(System.in);
@@ -37,8 +38,30 @@ public class CarroService {
         } while (!voltar);
     }
 
+    public void subMenuGaragem(){
+        Scanner sc = new Scanner(System.in);
+
+        boolean voltar = false;
+
+        do {
+            System.out.println("1.Abrir Garagem 2.Vagas Garagem 0.Voltar");
+            int opcaodois = sc.nextInt();
+            switch (opcaodois) {
+                case 1:
+                    abrirGaragem();
+                    break;
+                case 2:
+                    vagasGaragem();
+                    break;
+                case 0:
+                    voltar = true;
+                    break;
+            }
+        } while (!voltar);
+    }
+
     public void cadastrarNovoCarro(){
-        if (carros.size() < totalVaga){
+        if (carros.size() < totalVagas){
             Scanner sc = new Scanner(System.in);
             System.out.println("Marca:");
             String marca = sc.nextLine();
@@ -48,9 +71,10 @@ public class CarroService {
             int ano = sc.nextInt();
             sc.nextLine();
             // Sem metodo setter, mas utilizando construtor para criar um objeto imutavel
-            Carro novoCarro = new Carro(marca, modelo, ano);
+            Carro novoCarro = new Carro(idVagaGaragem, marca, modelo, ano);
             carros.add(novoCarro);
             vagasAtual++;
+            idVagaGaragem++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
@@ -58,24 +82,29 @@ public class CarroService {
 
     public void cadastrarCarroPadrao(){
 
-        if (carros.size() < totalVaga){
+        if (carros.size() < totalVagas){
             Carro novoCarroPadrao = new Carro();
             carros.add(novoCarroPadrao);
             vagasAtual++;
+            idVagaGaragem++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
     }
 
     // exercicio 2 - exibe informacoes do carro
-    public void exibirCarro(){
+    public void abrirGaragem(){
         if (carros.isEmpty()){
-            System.out.println(" *** Garagem vazia! *** ");
+            System.out.println(" *** Garagem vazia!");
         } else {
             for (Carro carro: carros){
-                System.out.println(String.format("Marca: %s, Modelo: %s, Ano: %d", carro.getMarca(), carro.getModelo(), carro.getAno()));
+                System.out.println(String.format("Garagem: %d Marca: %s, Modelo: %s, Ano: %d", carro.getIdVaga(), carro.getMarca(), carro.getModelo(), carro.getAno()));
             }
         }
+    }
+
+    public static void vagasGaragem(){
+        System.out.println(String.format("Garagem: %d/%d", vagasAtual, totalVagas));
     }
 
     // exercicio 2 - devolve valor (idade do carro)
