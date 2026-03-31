@@ -12,7 +12,7 @@ public class CarroService {
     // exercicio 3 - cria lista de carro
     List<Carro> carros = new ArrayList<Carro>();
 
-    public void cadastrarCarro(){
+    public void cadastrarNovoCarro(){
         int vagaGaragem = 3;
 
         if (carros.size() < vagaGaragem){
@@ -24,8 +24,20 @@ public class CarroService {
             System.out.println("Ano:");
             int ano = sc.nextInt();
             sc.nextLine();
+            // Sem metodo setter, mas utilizando construtor para criar um objeto imutavel
             Carro novoCarro = new Carro(marca, modelo, ano);
             carros.add(novoCarro);
+        } else {
+            System.out.println(" *** Garagem cheia!");
+        }
+    }
+
+    public void cadastrarCarroPadrao(){
+        int vagaGaragem = 3;
+
+        if (carros.size() < vagaGaragem){
+            Carro novoCarroPadrao = new Carro();
+            carros.add(novoCarroPadrao);
         } else {
             System.out.println(" *** Garagem cheia!");
         }

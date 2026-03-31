@@ -18,7 +18,22 @@ public class Main {
             int opcao = sc.nextInt();
                 switch (opcao) {
                     case 1:
-                        service.cadastrarCarro();
+                        boolean voltar = false;
+                        do {
+                            System.out.println("1.Novo Carro 2.Carro Padrão 0.Voltar");
+                            int opcaodois = sc.nextInt();
+                            switch (opcaodois) {
+                                case 1:
+                                    service.cadastrarNovoCarro();
+                                    break;
+                                case 2:
+                                    service.cadastrarCarroPadrao();
+                                    break;
+                                case 0:
+                                    voltar = true;
+                                    break;
+                            }
+                        } while (!voltar);
                         break;
                     case 2:
                         service.exibirCarro();

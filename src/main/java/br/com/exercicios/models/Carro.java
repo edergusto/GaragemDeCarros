@@ -1,5 +1,7 @@
 package main.java.br.com.exercicios.models;
 
+import java.time.LocalDate;
+
 public class Carro {
     private int garagem;
     private String marca;
@@ -7,14 +9,18 @@ public class Carro {
     private int ano;
 
     public Carro(String marca, String modelo, int ano) {
-
         if ( ano < 1886 ) {
             throw new IllegalArgumentException("Ano inválido!");
         }
-
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+    }
+
+    public Carro() {
+        this.marca = "Desconhecido";
+        this.modelo = "Desconhecido";
+        this.ano = LocalDate.now().getYear();
     }
 
     public String getMarca() {
