@@ -1,5 +1,5 @@
-package main.java.br.com.exercicios.models;
-import main.java.br.com.exercicios.services.CarroService;
+package main.java.br.com.carro.models;
+import main.java.br.com.carro.services.CarroService;
 import java.time.LocalDate;
 
 // Classe e objeto

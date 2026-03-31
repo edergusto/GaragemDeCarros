@@ -1,6 +1,6 @@
-package main.java.br.com.exercicios;
+package main.java.br.com.carro;
 
-import main.java.br.com.exercicios.services.CarroService;
+import main.java.br.com.carro.services.CarroService;
 import java.util.Scanner;
 
 public class Main {
