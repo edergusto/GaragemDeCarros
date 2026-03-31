@@ -1,5 +1,4 @@
 package main.java.br.com.exercicios.services;
-
 import main.java.br.com.exercicios.models.Carro;
 import java.util.List;
 import java.time.LocalDate;
@@ -8,13 +7,12 @@ import java.util.Scanner;
 
 
 public class CarroService {
-
-    // exercicio 3 - cria lista de carro
     List<Carro> carros = new ArrayList<Carro>();
 
+    // Variáveis
     static int totalVagas = 5;
     static int vagasAtual = 0;
-    public static int idVagaGaragem = 1;
+    public static int idCarroGaragem = 1;
     public static final int MINIMO_ANO = 1886;
     public static final int MAXIMO_ANO = LocalDate.now().getYear();
 
@@ -25,8 +23,8 @@ public class CarroService {
 
         do {
             System.out.println("1.Novo Carro 2.Carro Padrão 0.Voltar");
-            int opcaodois = sc.nextInt();
-            switch (opcaodois) {
+            int opcao = sc.nextInt();
+            switch (opcao) {
                 case 1:
                     cadastrarNovoCarro();
                     break;
@@ -46,13 +44,16 @@ public class CarroService {
         boolean voltar = false;
 
         do {
-            System.out.println("1.Abrir Garagem 2.Vagas Garagem 0.Voltar");
-            int opcaodois = sc.nextInt();
-            switch (opcaodois) {
+            System.out.println("1.Mostrar Garagem 2.Remover Carro 3.Vagas Garagem 0.Voltar");
+            int opcao = sc.nextInt();
+            switch (opcao) {
                 case 1:
-                    abrirGaragem();
+                    mostrarGaragem();
                     break;
                 case 2:
+                    removerCarro();
+                    break;
+                case 3:
                     vagasGaragem();
                     break;
                 case 0:
@@ -72,35 +73,32 @@ public class CarroService {
             System.out.println("Ano:");
             int ano = sc.nextInt();
             sc.nextLine();
-            // Sem metodo setter, mas utilizando construtor para criar um objeto imutavel
-            Carro novoCarro = new Carro(idVagaGaragem, marca, modelo, ano);
+            Carro novoCarro = new Carro(idCarroGaragem, marca, modelo, ano);
             carros.add(novoCarro);
             vagasAtual++;
-            idVagaGaragem++;
+            idCarroGaragem++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
     }
 
     public void cadastrarCarroPadrao(){
-
         if (carros.size() < totalVagas){
             Carro novoCarroPadrao = new Carro();
             carros.add(novoCarroPadrao);
             vagasAtual++;
-            idVagaGaragem++;
+            idCarroGaragem++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
     }
 
-    // exercicio 2 - exibe informacoes do carro
-    public void abrirGaragem(){
+    public void mostrarGaragem(){
         if (carros.isEmpty()){
             System.out.println(" *** Garagem vazia!");
         } else {
             for (Carro carro: carros){
-                System.out.println(String.format("Garagem: %d Marca: %s, Modelo: %s, Ano: %d", carro.getIdVaga(), carro.getMarca(), carro.getModelo(), carro.getAno()));
+                System.out.println(String.format("ID Carro: %d Marca: %s, Modelo: %s, Ano: %d", carro.getIdCarro(), carro.getMarca(), carro.getModelo(), carro.getAno()));
             }
         }
     }
@@ -109,19 +107,23 @@ public class CarroService {
         System.out.println(String.format("Garagem: %d/%d", vagasAtual, totalVagas));
     }
 
-    // exercicio 2 - devolve valor (idade do carro)
-    public void carroInfo(Carro infoCarro){
+    public void carroInfo(Carro idVaga){
         int anoAtual = LocalDate.now().getYear();
-        int anoCarro = infoCarro.getAno();
+        int anoCarro = idVaga.getAno();
         int anoLancamento = anoAtual - anoCarro;
         if (anoLancamento == 1){
-            System.out.print(String.format("O %s %s tem um ano desde o seu lançamento!", infoCarro.getMarca(), infoCarro.getModelo()));
+            System.out.print(String.format("O %s %s tem um ano desde o seu lançamento!", idVaga.getMarca(), idVaga.getModelo()));
         } else {
-            System.out.print(String.format("O %s %s tem %d anos desde o seu ano de lançamento!", infoCarro.getMarca(), infoCarro.getModelo(), anoLancamento));
+            System.out.print(String.format("O %s %s tem %d anos desde o seu ano de lançamento!", idVaga.getMarca(), idVaga.getModelo(), anoLancamento));
         }
     }
 
     public void removerCarro(){
-        carros.remove(1);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite o ID do carro para remover: ");
+        int idCarro = sc.nextInt();
+        System.out.println(String.format("ID Carro %d removido!", idCarro));
+        carros.removeIf(carro -> carro.getIdCarro() == idCarro);
+
     }
 }

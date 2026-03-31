@@ -13,7 +13,7 @@ public class Main {
 
         do {
             System.out.println("MENU PRINCIPAL");
-            System.out.println("1.Cadastrar 2.Garagem 3.Serviços 0.Sair");
+            System.out.println("1.Cadastrar 2.Garagem 0.Sair");
             System.out.println("Escolha uma opção:");
             int opcao = sc.nextInt();
                 switch (opcao) {
@@ -22,9 +22,6 @@ public class Main {
                         break;
                     case 2:
                         service.subMenuGaragem();
-                        break;
-                    case 3:
-                        //service.anoCarro();
                         break;
                     case 0:
                         sair = true;

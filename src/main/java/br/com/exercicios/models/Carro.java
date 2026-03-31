@@ -1,35 +1,36 @@
 package main.java.br.com.exercicios.models;
-
 import main.java.br.com.exercicios.services.CarroService;
-
 import java.time.LocalDate;
 
+// Classe e objeto
 public class Carro {
-    private int idVaga;
-    private int garagem;
+    private final int idCarro;
     private String marca;
     private String modelo;
     private int ano;
 
-    public Carro(int idVaga, String marca, String modelo, int ano) {
+    // Construtor com parâmetros e verificação de ano do carro
+    public Carro(int idCarro, String marca, String modelo, int ano) {
         if ( ano < CarroService.MINIMO_ANO || ano > CarroService.MAXIMO_ANO ) {
             throw new IllegalArgumentException("Ano inválido!");
         }
-        this.idVaga = idVaga;
+        this.idCarro = idCarro;
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
     }
 
+    // Construtor sem parâmetros com valores padrões
     public Carro() {
-        this.idVaga = CarroService.idVagaGaragem;
+        this.idCarro = CarroService.idCarroGaragem;
         this.marca = "Desconhecido";
         this.modelo = "Desconhecido";
         this.ano = LocalDate.now().getYear();
     }
 
-    public int getIdVaga() {
-        return idVaga;
+    // Encapsulamento com métodos Getter e Setter
+    public int getIdCarro() {
+        return idCarro;
     }
 
     public String getMarca() {
