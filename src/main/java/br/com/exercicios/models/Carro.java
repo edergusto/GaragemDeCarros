@@ -6,6 +6,17 @@ public class Carro {
     private String modelo;
     private int ano;
 
+    public Carro(String marca, String modelo, int ano) {
+
+        if ( ano < 1886 ) {
+            throw new IllegalArgumentException("Ano inválido!");
+        }
+
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
     public String getMarca() {
         return marca;
     }

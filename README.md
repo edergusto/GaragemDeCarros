@@ -15,7 +15,7 @@ Foco nos fundamentos de classes, encapsulamento e membros estáticos utilizando 
 - [x] **Exercício 1:** Criação da classe `Carro` (marca, modelo, ano) e instanciar objetos.
 - [x] **Exercício 2:** Métodos `void` vs Retorno (`exibir()` e `idadeDoCarro()`).
 - [x] **Exercício 3:** Uso de `ArrayList<Carro>` e loop `for-each`.
-- [ ] **Exercício 4:** Encapsulamento (`private`, getters/setters e validação de ano).
+- [x] **Exercício 4:** Encapsulamento (`private`, getters/setters e validação de ano).
 - [ ] **Exercício 5:** Construtor parametrizado.
 - [ ] **Exercício 6:** Sobrecarga de construtor (padrão vs "Desconhecido").
 - [ ] **Exercício 7:** Atributo `static` para contagem total de carros.

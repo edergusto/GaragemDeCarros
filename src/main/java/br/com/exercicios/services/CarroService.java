@@ -17,14 +17,14 @@ public class CarroService {
 
         if (carros.size() < vagaGaragem){
             Scanner sc = new Scanner(System.in);
-            Carro novoCarro = new Carro();
             System.out.println("Marca:");
-            novoCarro.setMarca(sc.nextLine());
+            String marca = sc.nextLine();
             System.out.println("Modelo:");
-            novoCarro.setModelo(sc.nextLine());
+            String modelo = sc.nextLine();
             System.out.println("Ano:");
-            novoCarro.setAno(sc.nextInt());
+            int ano = sc.nextInt();
             sc.nextLine();
+            Carro novoCarro = new Carro(marca, modelo, ano);
             carros.add(novoCarro);
         } else {
             System.out.println(" *** Garagem cheia!");
