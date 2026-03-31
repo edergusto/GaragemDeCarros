@@ -13,6 +13,29 @@ public class CarroService {
     List<Carro> carros = new ArrayList<Carro>();
 
     static int totalVaga = 5;
+    static int vagasAtual = 0;
+
+    public void subMenuCadastrarCarro(){
+        Scanner sc = new Scanner(System.in);
+
+        boolean voltar = false;
+
+        do {
+            System.out.println("1.Novo Carro 2.Carro Padrão 0.Voltar");
+            int opcaodois = sc.nextInt();
+            switch (opcaodois) {
+                case 1:
+                    cadastrarNovoCarro();
+                    break;
+                case 2:
+                    cadastrarCarroPadrao();
+                    break;
+                case 0:
+                    voltar = true;
+                    break;
+            }
+        } while (!voltar);
+    }
 
     public void cadastrarNovoCarro(){
         if (carros.size() < totalVaga){
@@ -27,7 +50,7 @@ public class CarroService {
             // Sem metodo setter, mas utilizando construtor para criar um objeto imutavel
             Carro novoCarro = new Carro(marca, modelo, ano);
             carros.add(novoCarro);
-            totalVaga++;
+            vagasAtual++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
@@ -38,6 +61,7 @@ public class CarroService {
         if (carros.size() < totalVaga){
             Carro novoCarroPadrao = new Carro();
             carros.add(novoCarroPadrao);
+            vagasAtual++;
         } else {
             System.out.println(" *** Garagem cheia!");
         }
