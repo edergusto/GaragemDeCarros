@@ -19,8 +19,8 @@ Foco nos fundamentos de classes, encapsulamento e membros estáticos utilizando 
 - [x] **Exercício 5:** Construtor parametrizado.
 - [x] **Exercício 6:** Sobrecarga de construtor (padrão vs "Desconhecido").
 - [x] **Exercício 7:** Atributo `static` para contagem total de carros.
-- [ ] **Exercício 8:** Método `static` e restrições de acesso a instâncias.
-- [ ] **Exercício 9:** Uso de `final` para constantes (Ano do primeiro carro: 1886).
+- [x] **Exercício 8:** Método `static` e restrições de acesso a instâncias.
+- [x] **Exercício 9:** Uso de `final` para constantes (Ano do primeiro carro: 1886).
 - [ ] **Exercício 10:** Escopo de variáveis (bloco `if`).
 - [ ] **Exercício 11:** Referência vs Valor com tipos primitivos (`int`).
 - [ ] **Exercício 12:** Referência vs Valor com objetos (Conceitos de Stack e Heap).
